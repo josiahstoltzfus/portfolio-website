@@ -21,7 +21,8 @@
     flex-shrink: 0;
 }
 
-.about-description {
+.about-card-item,
+.about-card-description {
     color: var(--color-text-muted);
 }
 

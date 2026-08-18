@@ -15,14 +15,6 @@
     flex-direction: column;
 }
 
-.hero-intro-line {
-    white-space: nowrap;
-}
-
-.hero-intro-name {
-    color: var(--color-accent)
-}
-
 .hero-intro-description {
-    max-width: 50ch;
+    color: var(--color-text-muted);
 }

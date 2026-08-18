@@ -1,6 +1,5 @@
 import './Hero.css';
 import HeroIntro from "./HeroIntro.jsx";
-import HeroCodeEditor from "./HeroCodeEditor.jsx";
 import PortfolioLinks from "../../../../shared/components/PortfolioLinks.jsx";
 
 export default function Hero() {
@@ -27,13 +26,25 @@ export default function Hero() {
                     <HeroIntro titleId="hero-title"/>
                 </div>
 
-                <div className="hero-code-editor-wrapper">
-                    <HeroCodeEditor/>
-                </div>
-
                 <div className="hero-links-wrapper">
                     <PortfolioLinks links={links}/>
                 </div>
+
+                <aside className="hero-info-wrapper" aria-label="Current work and focus">
+                    <div className="hero-info-item">
+                        <dt className="text-eyebrow hero-info-title">Currently</dt>
+                        <dd className="text-section-body hero-info-description">
+                            Building a new website for Fellowship Baptist Church
+                        </dd>
+                    </div>
+
+                    <div className="hero-info-item">
+                        <dt className="text-eyebrow hero-info-title">Focus</dt>
+                        <dd className="text-section-body hero-info-description">
+                            Accessible interfaces and maintainable applications
+                        </dd>
+                    </div>
+                </aside>
             </div>
         </section>
     );

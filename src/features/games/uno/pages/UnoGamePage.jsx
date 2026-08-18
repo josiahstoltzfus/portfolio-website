@@ -1,7 +1,6 @@
 import './UnoGamePage.css'
 import UnoGameBoard from "../components/board/UnoGameBoard.jsx";
 import UnoGameMenu from "../components/controls/UnoGameMenu.jsx";
-import GameToolbar from "../../GameToolbar.jsx";
 import GameButton from "../components/shared/GameButton.jsx";
 import UnoRulesModal from "../components/modals/UnoRulesModal.jsx";
 import GameOverModal from "../components/modals/GameOverModal.jsx";
