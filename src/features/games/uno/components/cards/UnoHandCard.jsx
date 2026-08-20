@@ -3,10 +3,7 @@ import UnoCard from "./UnoCard.jsx";
 
 export default function UnoHandCard({
                                         card,
-                                        cardRefs,
-                                        registerRef,
                                         pendingCardId,
-                                        isBeingCloned,
                                         isPlayable,
                                         onPlayCard,
                                     }) {
@@ -15,12 +12,10 @@ export default function UnoHandCard({
     return (
         <button
             type="button"
-            ref={(element) => registerRef?.(cardRefs, card.cardId, element)}
             onClick={onPlayCard}
             disabled={!isPlayable}
             className={`uno-hand-card 
             ${isPlayable ? "uno-hand-card-is-playable" : ""}
-            ${isBeingCloned ? "uno-hand-card-is-hidden" : ""} 
             ${isPending ? "uno-hand-card-is-pending" : ""}`}>
             <UnoCard card={card}/>
         </button>

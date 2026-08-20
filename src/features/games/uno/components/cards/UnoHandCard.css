@@ -4,10 +4,6 @@
     cursor: pointer;
 }
 
-.uno-hand-card.uno-hand-card-is-hidden {
-    opacity: 0;
-}
-
 .uno-hand-card.uno-hand-card-is-pending .uno-card {
     --uno-card-hover-ring-color: rgb(255 255 255 / 0.75);
 }

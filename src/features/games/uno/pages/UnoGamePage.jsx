@@ -4,7 +4,7 @@ import UnoGameMenu from "../components/controls/UnoGameMenu.jsx";
 import GameButton from "../components/shared/GameButton.jsx";
 import UnoRulesModal from "../components/modals/UnoRulesModal.jsx";
 import GameOverModal from "../components/modals/GameOverModal.jsx";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useCallback} from "react";
 import {
     createGame,
     drawCard,
@@ -22,8 +22,6 @@ export default function UnoGamePage() {
     const [gameState, setGameState] = useState(null);
     const [gameId, setGameId] = useState(null);
     const playerName = "Player 1";
-    const [flyingCard, setFlyingCard] = useState(null);
-    const [pendingGameState, setPendingGameState] = useState(null);
     const [lastAction, setLastAction] = useState(null);
     const [openRules, setOpenRules] = useState(false);
 
@@ -38,56 +36,52 @@ export default function UnoGamePage() {
         setGameId(null);
     }
 
-    function handleFlyingCardAnimationComplete() {
-        setGameState(pendingGameState);
-        setFlyingCard(null);
-        setPendingGameState(null);
-    }
-
     async function handlePlayCard(playerId, cardId, chosenColor = null) {
         const response = await playCard(gameId, playerId, cardId, chosenColor);
 
-        if (response.lastAction.type === "PENDING_ACTION_REQUIRED") {
-            setGameState(response.gameState);
-            return response.lastAction;
-        }
-
-        setPendingGameState(response.gameState);
+        setGameState(response.gameState);
         setLastAction(response.lastAction);
+
         return response.lastAction;
     }
 
     async function handleDrawCard() {
         const response = await drawCard(gameId, gameState.currentPlayerId);
-        setPendingGameState(response.gameState);
+
+        setGameState(response.gameState);
         setLastAction(response.lastAction);
+
         return response.lastAction;
     }
 
     async function handlePassTurn() {
         const response = await passTurn(gameId);
+
         setGameState(response.gameState);
         setLastAction(response.lastAction);
     }
 
     async function handleChooseWildColor(color) {
         const response = await chooseWildColor(gameId, gameState.currentPlayerId, gameState.pendingCardId, color);
-        setPendingGameState(response.gameState);
+
+        setGameState(response.gameState);
         setLastAction(response.lastAction);
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    async function handleCallUno(playerId) {
+    // Keep this callback stable because the UNO-window effect depends on it.
+    const handleCallUno = useCallback(async (playerId) => {
         const response = await callUno(gameId, playerId);
-        setGameState(response.gameState);
-        setLastAction(response.lastAction);
-    }
 
-    async function handleCallOutUno(playerId) {
-        const response = await callOutUno(gameId, playerId);
         setGameState(response.gameState);
         setLastAction(response.lastAction);
-    }
+    }, [gameId]);
+
+    const handleCallOutUno = useCallback(async (playerId) => {
+        const response = await callOutUno(gameId, playerId);
+
+        setGameState(response.gameState);
+        setLastAction(response.lastAction);
+    }, [gameId]);
 
     function getWinner() {
 
@@ -119,11 +113,11 @@ export default function UnoGamePage() {
         if (pendingPlayerId !== gameState.localPlayer.id) return;
 
         const timer = setTimeout(() => {
-            handleCallOutUno(pendingPlayerId);
+            void handleCallOutUno(pendingPlayerId);
         }, 2000);
 
         return () => clearTimeout(timer);
-    }, [gameState]);
+    }, [gameState, handleCallOutUno]);
 
     useEffect(() => {
         if (!gameId) return;
@@ -137,7 +131,7 @@ export default function UnoGamePage() {
         if (pendingPlayerId === gameState.localPlayer.id) return;
 
         const timer = setTimeout(() => {
-            handleCallUno(pendingPlayerId);
+            void handleCallUno(pendingPlayerId);
         }, 2000);
 
         return () => clearTimeout(timer);
@@ -168,7 +162,7 @@ export default function UnoGamePage() {
 
         async function runBotTurn() {
             const response = await playBotTurn(gameId);
-            setPendingGameState(response.gameState);
+            setGameState(response.gameState);
             setLastAction(response.lastAction);
         }
 
@@ -213,10 +207,7 @@ export default function UnoGamePage() {
             {!gameState && <UnoGameMenu startGame={startGame}/>}
             {gameState && <UnoGameBoard
                 gameState={gameState}
-                flyingCard={flyingCard}
                 lastAction={lastAction}
-                setFlyingCard={setFlyingCard}
-                onFlyingAnimationComplete={handleFlyingCardAnimationComplete}
                 onCallUno={handleCallUno}
                 onCallOutUno={handleCallOutUno}
                 onChooseWildColor={handleChooseWildColor}

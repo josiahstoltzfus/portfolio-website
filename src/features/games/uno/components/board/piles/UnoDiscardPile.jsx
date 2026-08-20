@@ -1,7 +1,7 @@
 import './UnoDiscardPile.css'
 import UnoDiscardCard from "../../cards/UnoDiscardCard.jsx";
 
-export default function UnoDiscardPile({topCard, currentColor, discardPileRef}) {
+export default function UnoDiscardPile({topCard, currentColor}) {
     const isWildCard =
         topCard?.value === "WILD" ||
         topCard?.value === "WILD_DRAW_FOUR";
@@ -12,8 +12,7 @@ export default function UnoDiscardPile({topCard, currentColor, discardPileRef}) 
         <div className="uno-discard-pile">
             <UnoDiscardCard
                 card={topCard}
-                displayColor={displayColor}
-                cardRef={discardPileRef}/>
+                displayColor={displayColor}/>
         </div>
     )
 }

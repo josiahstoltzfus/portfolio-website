@@ -7,10 +7,7 @@ export default function UnoPlayerArea({
                                           localPlayer,
                                           availableActions,
                                           pendingCardId,
-                                          flyingCard,
                                           playerRefs,
-                                          playerCardRefs,
-                                          cardRefs,
                                           registerRef,
                                           onDrawCard,
                                           onCallUno,
@@ -28,7 +25,6 @@ export default function UnoPlayerArea({
                 playerId={localPlayer.id}
                 playerName={localPlayer.name}
                 playerRefs={playerRefs}
-                playerCardRefs={playerCardRefs}
                 registerRef={registerRef}
                 hasAction={hasAction}
                 handSize={localPlayer.handSize}/>
@@ -43,9 +39,6 @@ export default function UnoPlayerArea({
                 onCallOutUno={onCallOutUno}
                 onPassTurn={onPassTurn}/>
             <UnoPlayerHand
-                flyingCard={flyingCard}
-                cardRefs={cardRefs}
-                registerRef={registerRef}
                 localPlayer={localPlayer}
                 playableCardIds={availableActions.playableCardIds}
                 pendingCardId={pendingCardId}

@@ -1,5 +1,5 @@
 import './CurrentPlayerDot.css'
-import {motion} from "framer-motion";
+import {motion as Motion} from "framer-motion";
 import {useEffect, useState} from "react";
 
 export default function CurrentPlayerDot({currentPlayerId, playerRefs}) {
@@ -33,8 +33,8 @@ export default function CurrentPlayerDot({currentPlayerId, playerRefs}) {
     if (!dotPosition) return null;
 
     return (
-        <motion.div
-            area-hidden="true"
+        <Motion.div
+            aria-hidden="true"
             className="current-player-dot"
             animate={{
                 left: dotPosition.left,

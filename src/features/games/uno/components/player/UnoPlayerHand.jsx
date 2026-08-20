@@ -7,9 +7,6 @@ export default function UnoPlayerHand({
                                           localPlayer,
                                           playableCardIds,
                                           pendingCardId,
-                                          flyingCard,
-                                          cardRefs,
-                                          registerRef,
                                           onPlayCard,
                                       }) {
     const sortedHand = sortCards(localPlayer.hand);
@@ -22,19 +19,15 @@ export default function UnoPlayerHand({
             trackClass="uno-player-hand-track">
             {sortedHand.map((card) => {
                 const isPlayable = playableCardIds.includes(card.cardId);
-                const isBeingCloned = flyingCard?.card?.cardId === card.cardId;
 
                 function handlePlayCard() {
-                    onPlayCard(card.cardId, card);
+                    onPlayCard(localPlayer.id, card.cardId);
                 }
 
                 return (
                         <UnoHandCard
                             key={card.cardId}
                             card={card}
-                            cardRefs={cardRefs}
-                            registerRef={registerRef}
-                            isBeingCloned={isBeingCloned}
                             pendingCardId={pendingCardId}
                             isPlayable={isPlayable}
                             onPlayCard={handlePlayCard}/>

@@ -7,10 +7,25 @@ export default function Modal({isOpen, onClose, children, width = "700px", heigh
 
     const modalRoot = document.getElementById("uno-modal-root");
 
+    // Scroll locking
+    useEffect(() => {
+        if (!isOpen) return;
+
+        // Preserve the scrollbar space to prevent layout shift while scrolling is locked.
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        document.body.classList.add("modal-open");
+
+        return () => {
+            document.body.style.paddingRight = "";
+            document.body.classList.remove("modal-open");
+        };
+    }, [isOpen]);
+
+    // Escape key
     useEffect(() => {
         if (!isOpen || !closeOnEscape) return;
-
-        document.body.classList.add("modal-open");
 
         function handleEscapeKey(event) {
             if (event.key === "Escape") {
@@ -22,8 +37,6 @@ export default function Modal({isOpen, onClose, children, width = "700px", heigh
 
         return () => {
             window.removeEventListener("keydown", handleEscapeKey);
-            document.body.classList.remove("modal-open");
-
         }
 
     }, [isOpen, closeOnEscape, onClose]);

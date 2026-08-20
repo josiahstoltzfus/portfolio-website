@@ -1,7 +1,7 @@
 import './GameOverPanel.css'
 import Panel from "../shared/Panel.jsx";
 import GameButton from "../shared/GameButton.jsx";
-import {Play, House, Trophy, Sparkles} from "lucide-react";
+import {Play, House, Trophy} from "lucide-react";
 
 export default function GameOverPanel({winnerName, onExitToMenu}) {
     return (

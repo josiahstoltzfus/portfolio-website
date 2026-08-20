@@ -8,7 +8,6 @@ export default function UnoPlayerBadge({
                                            handSize,
                                            hasAction,
                                            playerRefs,
-                                           playerCardRefs,
                                            registerRef,
                                        }) {
     const MAX_VISIBLE_CARDS = 7;
@@ -28,16 +27,10 @@ export default function UnoPlayerBadge({
             </div>
             <div className="uno-player-card-count">
                 {Array.from({length: visibleCardCount}).map((_, index) => {
-                    const isLastVisibleCard = index === visibleCardCount - 1;
                     return (
                         <div
                             key={index}
-                            className="uno-player-card-count-card"
-                            ref={
-                                isLastVisibleCard && playerCardRefs && registerRef
-                                    ? (element) => registerRef?.(playerCardRefs, playerId, element)
-                                    : undefined
-                            }/>
+                            className="uno-player-card-count-card"/>
                     );
                 })}
                 <p className="uno-player-card-count-label">{handSize}</p>
