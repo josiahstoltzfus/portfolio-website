@@ -1,7 +1,0 @@
-.center-area {
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    gap: var(--uno-card-gap-center);
-}

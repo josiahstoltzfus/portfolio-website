@@ -1,6 +1,6 @@
 import './UnoGamePage.css'
-import UnoGameBoard from "../components/board/UnoGameBoard.jsx";
-import UnoGameMenu from "../components/controls/UnoGameMenu.jsx";
+import UnoGameBoard from "../components/game-board/UnoGameBoard.jsx";
+import UnoGameMenu from "../components/game-menu/UnoGameMenu.jsx";
 import GameButton from "../components/shared/GameButton.jsx";
 import UnoRulesModal from "../components/modals/UnoRulesModal.jsx";
 import GameOverModal from "../components/modals/GameOverModal.jsx";
@@ -24,6 +24,15 @@ export default function UnoGamePage() {
     const playerName = "Player 1";
     const [lastAction, setLastAction] = useState(null);
     const [openRules, setOpenRules] = useState(false);
+
+    useEffect(() => {
+        if (!gameState) return;
+
+        console.log("UNO update:", {
+            gameState: structuredClone(gameState),
+            lastAction: structuredClone(lastAction),
+        });
+    }, [gameState, lastAction]);
 
     async function startGame(playerCount) {
         const game = await createGame(playerName, playerCount);
@@ -166,7 +175,7 @@ export default function UnoGamePage() {
             setLastAction(response.lastAction);
         }
 
-        const timeoutId = setTimeout(runBotTurn, 1500);
+        const timeoutId = setTimeout(runBotTurn, 2000);
 
         return () => clearTimeout(timeoutId);
 

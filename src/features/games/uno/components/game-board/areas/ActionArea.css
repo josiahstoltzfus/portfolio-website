@@ -1,0 +1,75 @@
+.action-area {
+    width: 100%;
+    max-width: calc(var(--space-xxl) * 7);
+    height: calc(var(--space-xxl) + var(--space-xl));
+
+    display: flex;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.action-area-message {
+    width: 100%;
+    height: 100%;
+    padding: var(--space-sm) var(--space-md);
+
+    border: 2px solid rgb(255 255 255 / 0.1);
+    border-radius: var(--radius-md);
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.action-area-primary {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+}
+
+.action-area-detail {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-regular);
+}
+
+.action-color {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.action-color.neutral {
+    background: rgb(255 255 255 / 0.2);
+}
+
+.action-color.red {
+    background: var(--uno-card-red);
+}
+
+.action-color.blue {
+    background: var(--uno-card-blue);
+}
+
+.action-color.green {
+    background: var(--uno-card-green);
+}
+
+.action-color.yellow {
+    background: var(--uno-card-yellow);
+}
+
+@media (max-width: 1024px) {
+    .action-area {
+        left: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-area {
+        left: 10%;
+    }
+}
+

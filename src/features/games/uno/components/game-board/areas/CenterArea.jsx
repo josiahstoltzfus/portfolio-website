@@ -4,6 +4,7 @@ import UnoDrawPile from "../piles/UnoDrawPile.jsx";
 import ActionArea from "./ActionArea.jsx";
 
 export default function CenterArea({
+                                       players,
                                        drawPileSize,
                                        discardPileSize,
                                        lastAction,
@@ -16,15 +17,17 @@ export default function CenterArea({
 
     return (
         <div className="center-area">
-            <ActionArea lastAction={lastAction}/>
-            <UnoDrawPile
-                drawPileSize={drawPileSize}
-                canDraw={canDraw}
-                onDrawCard={onDrawCard}/>
-            <UnoDiscardPile
-                discardPileSize={discardPileSize}
-                currentColor={currentColor}
-                topCard={topCard}/>
+            <div className="card-piles">
+                <UnoDrawPile
+                    drawPileSize={drawPileSize}
+                    canDraw={canDraw}
+                    onDrawCard={onDrawCard}/>
+                <UnoDiscardPile
+                    discardPileSize={discardPileSize}
+                    currentColor={currentColor}
+                    topCard={topCard}/>
+            </div>
+            <ActionArea lastAction={lastAction} players={players}/>
         </div>
     )
 }

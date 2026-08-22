@@ -1,0 +1,13 @@
+.center-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--uno-card-gap-center);
+}
+
+.card-piles {
+    display: flex;
+    justify-content: center;
+    gap: var(--uno-card-gap-center);
+}

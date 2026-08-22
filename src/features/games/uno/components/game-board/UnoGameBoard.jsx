@@ -6,6 +6,7 @@ import {useRef} from "react";
 import {registerRef} from "../../utils/utils.js";
 import CurrentPlayerDot from "./indicators/CurrentPlayerDot.jsx";
 import WildColorModal from "../modals/WildColorModal.jsx";
+import ActionArea from "./areas/ActionArea.jsx";
 
 export default function UnoGameBoard({
                                          gameState,
@@ -19,6 +20,10 @@ export default function UnoGameBoard({
                                      }) {
 
     const playerRefs = useRef({});
+    const players = [
+        gameState.localPlayer,
+        ...gameState.opponents,
+    ]
     const shouldShowWildColorModal = gameState.pendingAction === "CHOOSE_WILD_COLOR";
 
     return (
@@ -29,6 +34,7 @@ export default function UnoGameBoard({
                 opponents={gameState.opponents}
                 availableActions={gameState.availableActions}/>
             <CenterArea
+                players={players}
                 drawPileSize={gameState.drawPileSize}
                 discardPileSize={gameState.discardPileSize}
                 topCard={gameState.topCard}
@@ -47,7 +53,6 @@ export default function UnoGameBoard({
                 onCallOutUno={onCallOutUno}
                 onPlayCard={onPlayCard}
                 onDrawCard={onDrawCard}/>
-
             <WildColorModal
                 isOpen={shouldShowWildColorModal}
                 onChooseWildColor={onChooseWildColor}/>
