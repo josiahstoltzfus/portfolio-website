@@ -3,6 +3,11 @@ import UnoGameBoard from "../components/game-board/UnoGameBoard.jsx";
 import UnoGameMenu from "../components/game-menu/UnoGameMenu.jsx";
 import GameButton from "../components/shared/GameButton.jsx";
 import UnoRulesModal from "../components/modals/UnoRulesModal.jsx";
+
+import {getPlayerName} from '../utils/utils.js';
+
+
+
 import GameOverModal from "../components/modals/GameOverModal.jsx";
 import {useEffect, useState, useCallback} from "react";
 import {
@@ -86,12 +91,23 @@ export default function UnoGamePage() {
         setLastAction(response.lastAction);
     }, [gameId]);
 
-    const handleCallOutUno = useCallback(async (playerId) => {
-        const response = await callOutUno(gameId, playerId);
+    const handleCallOutUno = useCallback(async (sourcePlayerId, targetPlayerId) => {
+        console.log("sourcePlayerId:", sourcePlayerId);
+        console.log("targetPlayerId:", targetPlayerId);
+        const players = [
+            gameState.localPlayer,
+            ...gameState.opponents,
+        ]
+        const sourcePlayer = getPlayerName(sourcePlayerId, players);
+        const targetPlayer = getPlayerName(targetPlayerId, players);
+        console.log("sourcePlayer:", sourcePlayer);
+        console.log("targetPlayer:", targetPlayer);
+
+        const response = await callOutUno(gameId, sourcePlayerId, targetPlayerId);
 
         setGameState(response.gameState);
         setLastAction(response.lastAction);
-    }, [gameId]);
+    }, [gameId, gameState]);
 
     function getWinner() {
 
@@ -122,8 +138,15 @@ export default function UnoGamePage() {
 
         if (pendingPlayerId !== gameState.localPlayer.id) return;
 
+        const computerPlayers = gameState.opponents.filter(player => player.type === "COMPUTER");
+
+        if (computerPlayers.length === 0) return;
+
         const timer = setTimeout(() => {
-            void handleCallOutUno(pendingPlayerId);
+            const randomIndex = Math.floor(Math.random() * computerPlayers.length);
+            const callingPlayerId = computerPlayers[randomIndex].id;
+
+            void handleCallOutUno(callingPlayerId, pendingPlayerId);
         }, 2000);
 
         return () => clearTimeout(timer);

@@ -31,8 +31,8 @@ export default function UnoPlayerActionBar({
     }, [localPlayer.id, onCallUno]);
 
     const handleCallOutUno = useCallback(() => {
-        callOutUnoPlayerIds.forEach(id => onCallOutUno(id));
-    }, [callOutUnoPlayerIds, onCallOutUno])
+        callOutUnoPlayerIds.forEach(targetId => onCallOutUno(localPlayer.id, targetId));
+    }, [callOutUnoPlayerIds, localPlayer.id, onCallOutUno])
 
     const handleKeyDown = useCallback((event) => {
         console.log("key pressed", event.key);

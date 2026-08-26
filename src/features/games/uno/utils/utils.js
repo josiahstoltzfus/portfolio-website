@@ -27,7 +27,7 @@ function capitalize(word) {
         + word.slice(1).toLowerCase();
 }
 
-function getPlayerName(playerId, players) {
+export function getPlayerName(playerId, players) {
     return players.find(player => player.id === playerId)?.name ?? "Unknown player";
 }
 

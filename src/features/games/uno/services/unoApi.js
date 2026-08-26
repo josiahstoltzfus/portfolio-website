@@ -95,13 +95,13 @@ export async function callUno(gameId, playerId) {
     return handleUnoResponse(response, "Failed to call uno");
 }
 
-export async function callOutUno(gameId, playerId) {
+export async function callOutUno(gameId, sourcePlayerId, targetPlayerId) {
     const response = await fetch(`${UNO_API_BASE_URL}/games/${gameId}/call-out-uno`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(playerId)
+        body: JSON.stringify({sourcePlayerId, targetPlayerId})
     })
 
     return handleUnoResponse(response, "Failed to call out uno");
