@@ -64,6 +64,10 @@
         padding-block-end: var(--space-md);
     }
 
+    .project-decisions-result {
+        grid-column: 1/-1;
+    }
+
     .project-decisions-item:first-child {
         padding-block: var(--space-md);
 
