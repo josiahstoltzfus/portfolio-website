@@ -1,15 +1,15 @@
-.project-features-list {
+.project-highlights-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-lg);
 }
 
-.project-features-list > li {
+.project-highlights-list > li {
     height: 100%;
 }
 
 @media (max-width: 768px) {
-    .project-features-list {
+    .project-highlights-list {
         grid-template-columns: 1fr;
     }
 }

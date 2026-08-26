@@ -38,6 +38,7 @@ export default function UnoGamePage() {
         const game = await createGame(playerName, playerCount);
         setGameState(game.gameState);
         setGameId(game.gameId);
+        setLastAction(null);
     }
 
     function exitToMenu() {

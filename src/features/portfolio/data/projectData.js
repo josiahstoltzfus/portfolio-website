@@ -1,6 +1,7 @@
-import {BADGE_MAP} from "./badgeData.js";
 import {SCREENSHOT_MAP} from "./screenshotData.js";
-import {FEATURES_MAP} from "./featuresData.js"
+import {HIGHLIGHTS_MAP} from "./highlightsData.js"
+import {OVERVIEW_MAP} from "./overviewData.js";
+import {DECISIONS_MAP} from "./decisionsData.js";
 import word_search_board from '../assets/screenshots/word-search/word-search-board.png'
 import manage_squirrels from '../assets/screenshots/squirrel/manage-squirrels.png'
 import uno_preview from '../assets/screenshots/uno/uno-preview.png'
@@ -11,28 +12,22 @@ export const PROJECTS = [
         slug: 'portfolio',
         title: "Portfolio Website",
         summary: "A personal portfolio website built with React to showcase the projects I've been working on.",
-        description: [
-            "This portfolio website was built with React, JavaScript, HTML, and CSS to showcase the projects I've been building and the skills I've developed along the way.",
-            "I wanted the site to be clean, simple, and easy to navigate while creating a place to share the projects I've been working on."
-        ],
+        description: "A React portfolio built to present my work, explain the decisions behind it, and provide direct access to interactive projects.",
         navDescription: "This website built with React",
-        projectType: "Portfolio Website",
         route: "/projects/portfolio",
+        role: "Solo designer and developer",
+        status: "Live",
         technologies: ["React", "JavaScript", "CSS", "Figma"],
-        badges: [
-            BADGE_MAP.react,
-            BADGE_MAP.javascript,
-            BADGE_MAP.figma,
-            BADGE_MAP.html,
-            BADGE_MAP.css,
-        ],
         screenshots: SCREENSHOT_MAP["portfolio"],
-        features: FEATURES_MAP["portfolio"],
+        highlights: HIGHLIGHTS_MAP["portfolio"],
+        overview: OVERVIEW_MAP["portfolio"],
+        decisions: DECISIONS_MAP["portfolio"],
         links: [
             {
-                label: "React App",
+                label: "View Source",
                 summary: "View the source code on GitHub",
                 url: "https://github.com/josiahstoltzfus/portfolio-website",
+                variant: "secondary",
             }
         ],
         preview: {
@@ -45,38 +40,34 @@ export const PROJECTS = [
             title: "UNO",
             summary:
                 "A full-stack UNO game built with Spring Boot and React.",
-            description: [
-                "UNO is a full-stack application of the classic card game built with Java, Spring Boot, and React. Players compete against computer-controlled opponents while the backend manages the game rules and keeps track of the game state.",
-                "The project gave me hands-on experience building a larger full-stack application, managing game logic, and connecting a React frontend to a Spring Boot backend."
-            ],
+            description: "A full-stack implementation of UNO where players compete against computer-controlled opponents while a Spring Boot backend enforces the rules and manages game state.",
             navDescription: "Card game built with Java",
             route: "/projects/uno",
-            technologies: ["React", "Java", "Spring Boot", "REST"],
-            badges: [
-                BADGE_MAP.java,
-                BADGE_MAP.spring,
-                BADGE_MAP.react,
-                BADGE_MAP.javascript,
-                BADGE_MAP.html,
-                BADGE_MAP.css,
-            ],
+            role: "Full-stack developer",
+            status: "Live",
+            technologies: ["React", "Java", "Spring Boot", "REST API"],
             screenshots: SCREENSHOT_MAP["uno"],
-            features: FEATURES_MAP["uno"],
+            highlights: HIGHLIGHTS_MAP["uno"],
+            overview: OVERVIEW_MAP["uno"],
+            decisions: DECISIONS_MAP["uno"],
             links: [
                 {
                     label: "Play Game",
                     summary: "Play the live game in your browser",
-                    url: "/uno"
+                    url: "/uno",
+                    variant: "primary",
                 },
                 {
-                    label: "React App",
+                    label: "Frontend Source",
                     summary: "View the source code on GitHub",
-                    url: "https://github.com/josiahstoltzfus/portfolio-website/tree/main/src/features/games/uno",
+                    url: "https://github.com/josiahstoltzfus/portfolio-website/tree/main/src/highlights/games/uno",
+                    variant: "secondary",
                 },
                 {
-                    label: "Spring API",
+                    label: "Backend Source",
                     summary: "View the source code on GitHub",
                     url: "https://github.com/josiahstoltzfus/uno-game-api",
+                    variant: "secondary",
                 },
             ],
             preview: {
@@ -88,32 +79,29 @@ export const PROJECTS = [
             slug: 'word-search',
             title: "Word Search",
             summary: "A word search game built with React and the HTML Canvas API.",
-            description: [
-                "Word Search is a browser-based word search game built with React, JavaScript, and the HTML Canvas API. Players solve randomly generated puzzles by dragging across words on the board.",
-                "I built the project to practice using React and the Canvas API. It's also a project I can continue adding to as I learn new things."
-            ],
+            description: "A browser-based word-search game with randomly generated puzzles and drag-to-select interaction rendered through the HTML Canvas API.",
             navDescription: "Puzzle game built with JavaScript",
             projectType: "Frontend Web Game",
             route: "/projects/word-search",
+            role: "Designer and frontend developer",
+            status: "Live",
             technologies: ["React", "JavaScript", "Canvas", "CSS"],
-            badges: [
-                BADGE_MAP.react,
-                BADGE_MAP.javascript,
-                BADGE_MAP.html,
-                BADGE_MAP.css,
-            ],
             screenshots: SCREENSHOT_MAP["word-search"],
-            features: FEATURES_MAP["word-search"],
+            highlights: HIGHLIGHTS_MAP["word-search"],
+            overview: OVERVIEW_MAP["word-search"],
+            decisions: DECISIONS_MAP["word-search"],
             links: [
                 {
                     label: "Play Game",
                     summary: "Play the live game in your browser",
-                    url: "/word-search"
+                    url: "/word-search",
+                    variant: "primary",
                 },
                 {
-                    label: "React App",
+                    label: "View Source",
                     summary: "View the source code on GitHub",
-                    url: "https://github.com/josiahstoltzfus/portfolio-website/tree/main/src/features/games/word-search"
+                    url: "https://github.com/josiahstoltzfus/portfolio-website/tree/main/src/highlights/games/word-search",
+                    variant: "secondary",
                 }
             ],
             preview: {
@@ -125,33 +113,29 @@ export const PROJECTS = [
             slug: 'squirrel-tracker',
             title: "Squirrel Tracker",
             summary: "An app that lets squirrels track their food supply, built with Java and React.",
-            description: [
-                "Squirrel Tracker is a full-stack web application built with React, Spring Boot, and PostgreSQL. It allows users to manage squirrels, stash locations, and stored food supplies.",
-                "The idea for Squirrel Tracker came from a C# ASP.NET MVC class project that used MySQL. I rebuilt it from scratch using React, Spring Boot, and PostgreSQL to practice building full-stack applications with the technologies I want to work with professionally.",
-                "More than anything, the project gave me a chance to build a complete application from frontend to backend while getting more comfortable with Spring Boot, PostgreSQL, and REST APIs."                ],
+            description: "A full-stack resource-tracking application rebuilt from an earlier C# ASP.NET MVC class project, allowing users to manage squirrels, stash locations, and stored food supplies.",
             navDescription: "Full stack app built with Java",
             projectType: "Full-Stack Web Application",
             route: "/projects/squirrel-tracker",
+            role: "Full-stack developer",
+            status: "Archived",
             technologies: ["React", "Java", "Spring Boot", "Postgres",],
-            badges: [
-                BADGE_MAP.java,
-                BADGE_MAP.react,
-                BADGE_MAP.javascript,
-                BADGE_MAP.spring,
-                BADGE_MAP.postgresql,
-            ],
             screenshots: SCREENSHOT_MAP["squirrel"],
-            features: FEATURES_MAP["squirrel"],
+            highlights: HIGHLIGHTS_MAP["squirrel"],
+            overview: OVERVIEW_MAP["squirrel"],
+            decisions: DECISIONS_MAP["squirrel"],
             links: [
                 {
-                    label: "React App",
+                    label: "Frontend Source",
                     summary: "View the live demo in your browser",
                     url: "https://github.com/josiahstoltzfus/squirrel-frontend",
+                    variant: "secondary",
                 },
                 {
-                    label: "Spring API",
+                    label: "Backend Source",
                     summary: "View the source code on GitHub",
                     url: "https://github.com/josiahstoltzfus/squirrel-backend",
+                    variant: "secondary",
                 },
             ],
             preview: {

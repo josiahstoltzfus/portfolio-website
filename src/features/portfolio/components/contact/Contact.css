@@ -13,53 +13,9 @@
     gap: var(--space-lg);
 }
 
-.contact-link-primary {
-    width: 160px;
-    padding-block: calc(var(--space-md) + var(--space-xs));
-
-    color: var(--portfolio-color-page-background);
-    background: var(--color-accent);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.contact-link-secondary {
-    width: 160px;
-    padding-block: calc(var(--space-md) + var(--space-xs));
-
-    color: var(--portfolio-color-page-background);
-    border: 1px solid var(--portfolio-color-page-background);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .contact-link-primary:hover {
-        background: var(--color-accent-dark);
-    }
-
-    .contact-link-secondary:hover {
-        background: var(--portfolio-color-page-background);
-        color: var(--color-text);
-    }
-}
-
 @media (max-width: 768px) {
     .contact-links {
         gap: var(--space-md);
         flex-direction: column;
-    }
-
-    .contact-link-primary,
-    .contact-link-secondary {
-        width: 100%;
     }
 }

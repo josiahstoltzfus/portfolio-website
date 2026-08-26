@@ -1,0 +1,48 @@
+.hero-link {
+    width: 160px;
+    padding-block: calc(var(--space-md) + var(--space-xs));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-link--primary {
+    color: var(--portfolio-color-page-background);
+    background: var(--color-accent);
+}
+
+.hero-link--secondary {
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.hero-link--secondary-dark {
+    color: var(--portfolio-color-page-background);
+    border: 1px solid var(--portfolio-color-page-background);
+}
+
+/* Hover Effects */
+@media (hover: hover) and (pointer: fine) {
+    .hero-link--primary:hover {
+        background: var(--color-accent-dark);
+    }
+
+    .hero-link--secondary:hover {
+        background: var(--color-accent);
+        color: var(--portfolio-color-page-background);
+    }
+
+    .hero-link--secondary-dark:hover {
+        background: var(--portfolio-color-page-background);
+        color: var(--color-text);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-link {
+        width: 100%;
+    }
+}

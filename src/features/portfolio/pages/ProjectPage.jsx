@@ -1,32 +1,19 @@
 import ProjectHero from "../components/project-page/components/hero/ProjectHero.jsx";
 import ProjectScreenshotSection from "../components/project-page/components/screenshots/ProjectScreenshotSection.jsx";
-import ProjectFeaturesSection from "../components/project-page/components/features/ProjectFeaturesSection.jsx";
+import ProjectHighlightsSection from "../components/project-page/components/highlights/ProjectHighlightsSection.jsx";
+import ProjectOverviewSection from "../components/project-page/components/overview/ProjectOverviewSection.jsx";
+import ProjectDecisionsSection from "../components/project-page/components/decisions/ProjectDecisionsSection.jsx";
 
 export default function ProjectPage({project}) {
-    const {
-        title,
-        description,
-        badges,
-        links,
-        preview,
-        screenshots,
-        features,
-        projectType
-    } = project;
+    const {screenshots, highlights, overview, decisions} = project;
 
     return (
         <>
-            <ProjectHero title={title}
-                         description={description}
-                         badges={badges}
-                         links={links}
-                         preview={preview}
-                         features={features}
-                         projectType={projectType}/>
-
+            <ProjectHero project={project}/>
             <ProjectScreenshotSection screenshots={screenshots}/>
-
-            <ProjectFeaturesSection features={features}/>
+            <ProjectOverviewSection overview={overview}/>
+            <ProjectHighlightsSection highlights={highlights}/>
+            <ProjectDecisionsSection decisions={decisions}/>
         </>
     )
 }

@@ -66,6 +66,7 @@
     --color-border: rgb(0 0 0 / .15);
     --color-text: var(--portfolio-color-text);
     --color-text-light: #B9C2CC;
+    --color-text-light-muted: #96A0AA;
     --color-text-extra-light: var(--portfolio-color-page-background);
     --color-text-muted: var(--portfolio-color-text-muted);
     --color-text-subtle: var(--portfolio-color-text-subtle);

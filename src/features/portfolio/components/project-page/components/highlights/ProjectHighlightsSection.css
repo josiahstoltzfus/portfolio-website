@@ -1,0 +1,11 @@
+.project-highlight-section {
+    background: var(--color-text);
+}
+
+.project-highlights-section-header {
+    grid-column: 1/-1;
+}
+
+.project-highlights-section-highlights-wrapper {
+    grid-column: 1/-1;
+}

@@ -12,7 +12,7 @@ export default function Projects() {
 
                 <div className="projects-section-header">
                     <SectionHeader
-                        eyebrow="PROJECTS"
+                        eyebrow="Selected Work"
                         title="Projects"
                         titleId="projects-title"
                         variant="dark"

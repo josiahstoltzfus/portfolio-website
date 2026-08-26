@@ -1,6 +1,7 @@
 import SectionHeader from "../project-page/SectionHeader.jsx";
 import './Contact.css';
 import {FileText, Contact as Linkedin, Mail} from "lucide-react";
+import HeroLink from "../../../../shared/components/HeroLink.jsx";
 
 export default function Contact() {
     return (
@@ -17,30 +18,21 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-links">
-                    <a
-                        className="text-button contact-link-primary"
+                    <HeroLink
                         href="mailto:contact@josiahstoltzfus.dev"
+                        variant="primary"
+                        newTab={false}
                     >
                         Email Me
-                    </a>
+                    </HeroLink>
 
-                    <a
-                        className="text-button contact-link-secondary"
-                        href="https://www.linkedin.com/in/josiahstoltzfus"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <HeroLink href="https://www.linkedin.com/in/josiahstoltzfus" variant="secondary-dark">
                         LinkedIn
-                    </a>
+                    </HeroLink>
 
-                    <a
-                        className="text-button contact-link-secondary"
-                        href="/resume"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View Resume
-                    </a>
+                    <HeroLink href="/resume" variant="secondary-dark">
+                        Resume
+                    </HeroLink>
                 </div>
 
 

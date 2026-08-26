@@ -1,6 +1,6 @@
 import './Hero.css';
 import HeroIntro from "./HeroIntro.jsx";
-import {FileText, Contact as Linkedin, Mail} from "lucide-react";
+import HeroLink from "../../../../shared/components/HeroLink.jsx";
 
 export default function Hero() {
     return (
@@ -12,33 +12,17 @@ export default function Hero() {
 
                 <div className="hero-links-wrapper">
                     <div className="hero-links">
-                        <a
-                            className="text-button hero-link-primary"
-                            href="/resume"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <HeroLink href="/resume" variant="primary">
                             View Resume
-                        </a>
+                        </HeroLink>
 
-                        <a
-                            className="text-button hero-link-text"
-                            href="https://github.com/josiahstoltzfus"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
+                        <HeroLink href="https://github.com/josiahstoltzfus" variant="secondary">
                             GitHub
-                        </a>
+                        </HeroLink>
 
-                        <a
-                            className="text-button hero-link-text"
-                            href="https://www.linkedin.com/in/josiahstoltzfus"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <HeroLink href="https://www.linkedin.com/in/josiahstoltzfus" variant="secondary">
                             LinkedIn
-                        </a>
+                        </HeroLink>
                     </div>
                 </div>
 

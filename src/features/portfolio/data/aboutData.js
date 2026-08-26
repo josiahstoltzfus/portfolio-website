@@ -3,8 +3,6 @@ import {
     Server,
     Database,
     PanelsTopLeft,
-    Briefcase,
-    Hammer,
 } from "lucide-react";
 
 export const ABOUT_CARDS = [
