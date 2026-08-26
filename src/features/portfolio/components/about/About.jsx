@@ -13,31 +13,14 @@ export default function About() {
                         eyebrow="ABOUT ME"
                         title="About"
                         titleId="about-title"
-                        description="I'm a software developer who enjoys building software and learning new technologies."/>
+                        description="I enjoy building full-stack applications and understanding how the pieces work together."/>
 
                     <div className="about-divider" aria-hidden="true"/>
 
                     <div className="text-section-body about-description">
                         <p>
-                            I recently graduated from <span
-                            className="about-text-emphasis">Greenville Technical College</span> with an associate degree
-                            in Programming and Software Development, and I’ll be pursuing a bachelor’s degree as I continue
-                            growing as a software developer.
+                            I earned an associate degree in Programming and Software Development from Greenville Technical College. I’m continuing to strengthen my skills through projects built with React, Java, Spring Boot, and SQL.
                         </p>
-
-                        <p>
-                            I enjoy building websites and web applications because I like working on both the frontend and the backend.
-                            One of my favorite parts of the process is organizing a project and finding ways to make the code cleaner,
-                            simpler, and easier to work with.
-                        </p>
-
-                        <p>
-                            My current focus is <span className="about-text-emphasis">full-stack web development with React, Java, and
-                            Spring Boot</span>. I'm looking forward to taking on real-world projects, building software that's meaningful
-                            to people who use it, and continuing to grow as a developer.
-                        </p>
-
-
                     </div>
                 </div>
 

@@ -1,8 +1,7 @@
 import './ProjectHero.css'
 import ProjectHeroIntro from "./ProjectHeroIntro.jsx";
-import PortfolioLinks from "../../../../../../shared/components/PortfolioLinks.jsx";
 
-export default function ProjectHero({title, description, badges, links, projectType}) {
+export default function ProjectHero({title, description, badges, projectType}) {
     return (
         <section className="project-hero-section" aria-labelledby="project-hero-title">
             <div className="grid page-margin project-hero-grid">
@@ -12,7 +11,6 @@ export default function ProjectHero({title, description, badges, links, projectT
                 </div>
 
                 <div className="project-hero-right-side">
-                    <PortfolioLinks links={links}/>
                 </div>
 
             </div>

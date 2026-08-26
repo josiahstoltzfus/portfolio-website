@@ -37,10 +37,11 @@
 .project-card-text-wrapper {
     flex: 1;
     padding-inline: var(--space-md);
+    padding-block-end: var(--space-md);
 
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-lg);
 }
 
 .project-card-text {
@@ -55,12 +56,17 @@
     color: var(--color-text-muted);
 }
 
-.project-card-badges {
-    padding-inline: var(--space-md);
-    padding-bottom: var(--space-md);
-
+.project-card-technologies {
     display: flex;
-    gap: var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.project-card-tech {
+    padding: var(--space-xs);
+
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
 }
 
 .project-card-badge-icon {
@@ -68,12 +74,10 @@
     height: 28px;
 }
 
-.project-card-type {
+.project-card-link {
     align-self: flex-start;
 
     color: var(--color-accent);
-
-    border-radius: var(--radius-pill);
 }
 
 .section-header-divider.project-card-divider {

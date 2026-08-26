@@ -12,7 +12,7 @@ export default function RootLayout({children}) {
         <div className="portfolio-page">
             <ScrollToHash/>
 
-            <header>
+            <header id="top">
                 <Navigation/>
             </header>
 

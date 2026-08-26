@@ -1,24 +1,8 @@
 import './Hero.css';
 import HeroIntro from "./HeroIntro.jsx";
-import PortfolioLinks from "../../../../shared/components/PortfolioLinks.jsx";
+import {FileText, Contact as Linkedin, Mail} from "lucide-react";
 
 export default function Hero() {
-    const links =
-        [
-            {
-                label: "GitHub",
-                url: "https://github.com/josiahstoltzfus"
-            },
-            {
-                label: "LinkedIn",
-                url: "https://www.linkedin.com/in/josiahstoltzfus"
-            },
-            {
-                label: "Resume",
-                url: "/resume"
-            },
-        ]
-
     return (
         <section className="hero-section" aria-labelledby="hero-title">
             <div className="grid page-margin">
@@ -27,7 +11,35 @@ export default function Hero() {
                 </div>
 
                 <div className="hero-links-wrapper">
-                    <PortfolioLinks links={links}/>
+                    <div className="hero-links">
+                        <a
+                            className="text-button hero-link-primary"
+                            href="/resume"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Resume
+                        </a>
+
+                        <a
+                            className="text-button hero-link-text"
+                            href="https://github.com/josiahstoltzfus"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            GitHub
+                        </a>
+
+                        <a
+                            className="text-button hero-link-text"
+                            href="https://www.linkedin.com/in/josiahstoltzfus"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn
+                        </a>
+                    </div>
                 </div>
 
                 <aside className="hero-info-wrapper" aria-label="Current work and focus">

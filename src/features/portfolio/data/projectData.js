@@ -18,6 +18,7 @@ export const PROJECTS = [
         navDescription: "This website built with React",
         projectType: "Portfolio Website",
         route: "/projects/portfolio",
+        technologies: ["React", "JavaScript", "CSS", "Figma"],
         badges: [
             BADGE_MAP.react,
             BADGE_MAP.javascript,
@@ -49,8 +50,8 @@ export const PROJECTS = [
                 "The project gave me hands-on experience building a larger full-stack application, managing game logic, and connecting a React frontend to a Spring Boot backend."
             ],
             navDescription: "Card game built with Java",
-            projectType: "Full-Stack Web Application",
             route: "/projects/uno",
+            technologies: ["React", "Java", "Spring Boot", "REST"],
             badges: [
                 BADGE_MAP.java,
                 BADGE_MAP.spring,
@@ -94,6 +95,7 @@ export const PROJECTS = [
             navDescription: "Puzzle game built with JavaScript",
             projectType: "Frontend Web Game",
             route: "/projects/word-search",
+            technologies: ["React", "JavaScript", "Canvas", "CSS"],
             badges: [
                 BADGE_MAP.react,
                 BADGE_MAP.javascript,
@@ -130,6 +132,7 @@ export const PROJECTS = [
             navDescription: "Full stack app built with Java",
             projectType: "Full-Stack Web Application",
             route: "/projects/squirrel-tracker",
+            technologies: ["React", "Java", "Spring Boot", "Postgres",],
             badges: [
                 BADGE_MAP.java,
                 BADGE_MAP.react,

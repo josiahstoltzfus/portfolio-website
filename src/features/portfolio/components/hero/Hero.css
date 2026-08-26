@@ -38,6 +38,57 @@
     color: var(--color-text-subtle);
 }
 
+.hero-links {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.hero-link-primary {
+    width: 160px;
+    padding-block: calc(var(--space-md) + var(--space-xs));
+
+    color: var(--portfolio-color-page-background);
+    background: var(--color-accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    transition: background-color 0.2s ease;
+}
+
+.hero-link-text {
+    width: 160px;
+    padding-block: calc(var(--space-md) + var(--space-xs));
+
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-link-primary:focus-visible,
+.hero-link-text:focus-visible {
+    outline: 3px solid var(--color-accent-dark);
+    outline-offset: var(--space-xs);
+}
+
+/* Hover Effects */
+@media (hover: hover) and (pointer: fine) {
+    .hero-link-primary:hover {
+        background: var(--color-accent-dark);
+    }
+
+    .hero-link-text:hover {
+        background: var(--color-accent);
+        color: var(--portfolio-color-page-background);
+    }
+}
+
 @media (max-width: 1150px) {
     .hero-intro-wrapper,
     .hero-links-wrapper,
@@ -55,6 +106,17 @@
     .hero-section {
         padding-top: var(--space-xl);
     }
+
+    .hero-links {
+        gap: var(--space-md);
+        flex-direction: column;
+    }
+
+    .hero-link-primary,
+    .hero-link-text {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {

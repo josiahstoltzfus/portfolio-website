@@ -16,6 +16,7 @@
     /* Page Layout */
     --section-spacing: 7.5rem;
     --nav-section-spacing: 1.5rem;
+    --footer-section-spacing: 1.5rem;
     --page-margin: 10rem;
     --nav-margin: 10rem;
     --grid-gutter: 2rem;
@@ -41,6 +42,10 @@
 
 .nav-section {
     padding-block: var(--nav-section-spacing);
+}
+
+.footer-section {
+    padding-block: var(--footer-section-spacing);
 }
 
 .page-margin {

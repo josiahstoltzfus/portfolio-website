@@ -1,7 +1,7 @@
 import Hero from "../components/hero/Hero.jsx";
 import Projects from "../components/projects/Projects.jsx";
 import About from "../components/about/About.jsx";
-import Stack from "../components/stack/Stack.jsx";
+import Contact from "../components/contact/Contact.jsx";
 
 export default function PortfolioPage() {
     return (
@@ -9,7 +9,7 @@ export default function PortfolioPage() {
             <Hero/>
             <Projects/>
             <About/>
-            <Stack/>
+            <Contact/>
         </>
     );
 }

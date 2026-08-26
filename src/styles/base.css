@@ -8,6 +8,11 @@ body {
     overflow-x: hidden;
 }
 
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: var(--space-xs);
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

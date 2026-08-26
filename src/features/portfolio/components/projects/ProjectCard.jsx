@@ -2,7 +2,7 @@ import './ProjectCard.css'
 import {Link} from "react-router-dom";
 
 export default function ProjectCard({project}) {
-    const {title, summary, badges, route, preview, projectType} = project;
+    const {title, summary, technologies, route, preview} = project;
 
     return (
         <Link className="project-card" to={route}>
@@ -17,12 +17,13 @@ export default function ProjectCard({project}) {
                     <p className="text-card-body project-card-summary">{summary}</p>
                 </div>
 
-                <span className="text-label project-card-type">{projectType}</span>
-            </div>
+                <div className="project-card-technologies">
+                    {technologies?.map((tech) => (
+                        <p className="text-badge project-card-tech">{tech}</p>
+                    ))}
+                </div>
 
-            <div className="project-card-badges">
-                {badges.map((badge) => <img className="project-card-badge-icon" key={badge.id} src={badge.image}
-                                            alt={badge.label}/>)}
+                <span className="text-label project-card-link">View Project →</span>
             </div>
 
         </Link>

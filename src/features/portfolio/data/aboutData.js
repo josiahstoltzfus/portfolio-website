@@ -41,23 +41,7 @@ export const ABOUT_CARDS = [
         items: [
             "PostgreSQL",
             "MySQL",
-            "Relational SQL",
-        ]
-    },
-    {
-        title: "Current Work",
-        icon: Hammer,
-        items: [
-            "Fellowship Baptist Church",
-            "Client Website",
-        ]
-    },
-    {
-        title: "Seeking",
-        icon: Briefcase,
-        items: [
-            "Junior software roles",
-            "Full-stack, React, or Java",
+            "Database design",
         ]
     },
 ];

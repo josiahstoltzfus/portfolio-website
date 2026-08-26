@@ -5,7 +5,8 @@ export default function Footer() {
         <footer className="footer-section">
             <div className="grid page-margin">
                 <div className="footer-content">
-                    <a className="footer-email" href="mailto:contact@josiahstoltzfus.dev">contact@josiahstoltzfus.dev</a>
+                    <a className="footer-name" href="#top">JOSIAH STOLTZFUS</a>
+                    <p className="footer-text">© 2026. All rights reserved.</p>
                 </div>
             </div>
         </footer>
