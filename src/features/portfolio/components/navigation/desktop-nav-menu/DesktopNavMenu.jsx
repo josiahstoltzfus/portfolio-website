@@ -13,16 +13,6 @@ export default function DesktopNavMenu({isOpen, toggleProjectsMenu, isProjectsMe
             className={`desktop-nav-menu ${isOpen ? "is-open" : ""}`}>
 
             <div className="desktop-nav-section">
-                <NavLink to="/#about" onClick={closeMenu} className="desktop-nav-link">
-                    <NavMenuItem
-                        title="About"
-                        description="Learn more about me."/>
-                </NavLink>
-            </div>
-
-            <div className="desktop-nav-divider" aria-hidden="true"/>
-
-            <div className="desktop-nav-section">
                 <button
                     type="button"
                     className="desktop-nav-section-button desktop-nav-link"
@@ -47,6 +37,26 @@ export default function DesktopNavMenu({isOpen, toggleProjectsMenu, isProjectsMe
                         </li>
                     ))}
                 </ul>
+            </div>
+
+            <div className="desktop-nav-divider" aria-hidden="true"/>
+
+            <div className="desktop-nav-section">
+                <NavLink to="/#about" onClick={closeMenu} className="desktop-nav-link">
+                    <NavMenuItem
+                        title="About"
+                        description="Learn more about me."/>
+                </NavLink>
+            </div>
+
+            <div className="desktop-nav-divider" aria-hidden="true"/>
+
+            <div className="desktop-nav-section">
+                <NavLink to="/#contact" onClick={closeMenu} className="desktop-nav-link">
+                    <NavMenuItem
+                        title="Contact"
+                        description="Get in touch with me."/>
+                </NavLink>
             </div>
 
             <div className="desktop-nav-divider" aria-hidden="true"/>

@@ -23,19 +23,6 @@ export default function MobileNavMenu({isOpen, toggleProjectsMenu, isProjectsMen
             </button>
 
             <div className="mobile-nav-section">
-                <NavLink
-                    to="/#about"
-                    onClick={closeMenu}
-                    className="mobile-nav-link">
-                    <NavMenuItem
-                        title="About"
-                        description="Learn more about me."/>
-                </NavLink>
-            </div>
-
-            <div className="mobile-nav-divider" aria-hidden="true"/>
-
-            <div className="mobile-nav-section">
                 <button
                     type="button"
                     className="mobile-nav-section-button mobile-nav-link"
@@ -68,6 +55,29 @@ export default function MobileNavMenu({isOpen, toggleProjectsMenu, isProjectsMen
             </div>
 
             <div className="mobile-nav-divider" aria-hidden="true"/>
+
+            <div className="mobile-nav-section">
+                <NavLink
+                    to="/#about"
+                    onClick={closeMenu}
+                    className="mobile-nav-link">
+                    <NavMenuItem
+                        title="About"
+                        description="Learn more about me."/>
+                </NavLink>
+            </div>
+
+            <div className="mobile-nav-divider" aria-hidden="true"/>
+
+            <div className="desktop-nav-section">
+                <NavLink to="/#contact" onClick={closeMenu} className="desktop-nav-link">
+                    <NavMenuItem
+                        title="Contact"
+                        description="Get in touch with me."/>
+                </NavLink>
+            </div>
+
+            <div className="desktop-nav-divider" aria-hidden="true"/>
 
             <div className="mobile-nav-section">
                 <a

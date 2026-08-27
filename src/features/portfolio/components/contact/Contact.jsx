@@ -5,7 +5,7 @@ import HeroLink from "../../../../shared/components/HeroLink.jsx";
 
 export default function Contact() {
     return (
-        <section className="section contact-section" aria-labelledby="contact-title">
+        <section id="contact" className="section contact-section" aria-labelledby="contact-title">
             <div className="grid page-margin">
                 <div className="contact-intro">
                     <SectionHeader
