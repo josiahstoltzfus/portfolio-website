@@ -18,6 +18,10 @@
 }
 
 .nav-name-full {
+    padding-inline-start: var(--space-sm);
+
+    border-left: 2px solid var(--color-accent);
+
     color: var(--color-text-light);
     font-weight: var(--font-weight-semibold);
     white-space: nowrap;
@@ -46,6 +50,10 @@
 }
 
 .nav-menu-button {
+    padding: var(--space-xs) var(--space-sm);
+
+    border: 1px solid var(--color-text-light);
+
     color: var(--color-text-light);
     transition: color 0.2s ease;
 }

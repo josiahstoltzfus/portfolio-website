@@ -49,7 +49,7 @@ export default function Navigation() {
                             aria-label={isDesktopNavMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                             aria-expanded={isDesktopNavMenuOpen}
                             aria-controls="desktop-nav-menu">
-                            <Menu strokeWidth={2.2} aria-hidden="true"/>
+                            <Menu strokeWidth={2} size={20} aria-hidden="true"/>
                         </button>
                         <DesktopNavMenu
                             isProjectsMenuOpen={isProjectsMenuOpen}
@@ -65,7 +65,7 @@ export default function Navigation() {
                         aria-label={isMobileNavMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                         aria-expanded={isMobileNavMenuOpen}
                         aria-controls="mobile-nav-menu">
-                        <Menu strokeWidth={2.2} aria-hidden="true"/>
+                        <Menu strokeWidth={2} size={20}  aria-hidden="true"/>
                     </button>
                 </div>
 
